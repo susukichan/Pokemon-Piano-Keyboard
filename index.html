@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokemon Piano Keyboard</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis|ZCOOL+KuaiLe&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="flex-container">
+        <div id="pikachu" data-key="65" class="key box">
+          <kbd>A</kbd>
+          <img src="img/pikachu.png" alt="Pikachu" />
+          <span class="sound">Pikachu</span>
+        </div>
+        <div id="bulbasaur" data-key="83" class="key box">
+          <kbd>S</kbd>
+          <img src="img/bulbasaur.png" alt="Bulbasaur" />
+          <span class="sound">Bulbasaur</span>
+        </div>
+        <div id="charmander" data-key="68" class="key box">
+          <kbd>D</kbd>
+          <img src="img/charmander.png" alt="Charmander" />
+          <span class="sound">Charmander</span>
+        </div>
+        <div id="squirtle" data-key="70" class="key box">
+          <kbd>F</kbd>
+          <img src="img/squirtle.png" alt="Squirtle" />
+          <span class="sound">Squirtle</span>
+        </div>
+        <div id="jigglypuff" data-key="71" class="key box">
+          <kbd>G</kbd>
+          <img src="img/jigglypuff.png" alt="Jigglypuff" />
+          <span class="sound">Jigglypuff</span>
+        </div>
+        <div id="eevee" data-key="72" class="key box">
+          <kbd>H</kbd>
+          <img src="img/eevee.png" alt="Eevee" />
+          <span class="sound">Eevee</span>
+        </div>
+      </div>
+    </div>
+
+    <audio data-key="65" src="sounds/pikachu.mp3"></audio>
+    <audio data-key="83" src="sounds/bulbasaur.mp3"></audio>
+    <audio data-key="68" src="sounds/charmander.mp3"></audio>
+    <audio data-key="70" src="sounds/squirtle.mp3"></audio>
+    <audio data-key="71" src="sounds/jigglypuff.mp3"></audio>
+    <audio data-key="72" src="sounds/eevee.mp3"></audio>
+
+    <script>
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return;
+        e.target.classList.remove("playing");
+      }
+
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+
+        key.classList.add("playing");
+        audio.currentTime = 0;
+        audio.play();
+      }
+
+      const keys = Array.from(document.querySelectorAll(".key"));
+      keys.forEach(key =>
+        key.addEventListener("transitionend", removeTransition)
+      );
+      window.addEventListener("keydown", playSound);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+html {
+  font-size: 10px;
+  background: url(img/wallpaper.jpg) bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-family: "Dosis", sans-serif;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 90px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex-basis: 100px;
+}
+
+.key {
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 0.3rem black;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-family: "Dosis", sans-serif;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+}
+
+.flex-container img {
+  min-width: 10vw;
+  height: 15vh;
+}
+
+#pikachu {
+  background: rgba(242, 213, 122, 0.4);
+}
+
+#bulbasaur {
+  background: rgba(142, 205, 179, 0.4);
+}
+
+#charmander {
+  background: rgba(247, 185, 131, 0.4);
+}
+
+#squirtle {
+  background: rgba(130, 199, 215, 0.4);
+}
+#jigglypuff {
+  background: rgba(248, 207, 216, 0.4);
+}
+
+#eevee {
+  background: rgba(194, 143, 90, 0.4);
+}
